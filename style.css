@@ -1,0 +1,449 @@
+agora o css
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #232b44;
+}
+
+.main-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(120deg, #2484e7 0%, #7139f7 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 40%, rgba(255,255,255,0.06) 40%, transparent 100%),
+              radial-gradient(ellipse at 30% 60%, rgba(255,255,255,0.04) 30%, transparent 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container-landing {
+  max-width: 1080px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 54px;
+  position: relative;
+  z-index: 1;
+}
+
+.left-landing {
+  flex: 1.15;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 440px;
+}
+
+.logo-row {
+  align-items: center;
+  margin-bottom: 18Spx;
+}
+
+.logo-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3fa4ff 60%, #b266ff 100%);
+  margin-right: 13px;
+}
+
+.logo-text {
+  font-size: 1.12rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.landing-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -1.3px;
+  line-height: 1.18;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.landing-desc {
+  font-size: 1.13rem;
+  margin-bottom: 32px;
+  opacity: 0.93;
+}
+
+.btn-main {
+  display: inline-block;
+  padding: 13px 34px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #24c6dc 0%, #5433ff 100%);
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0 2px 8px 0 #7139f744;
+  text-decoration: none;
+  transition: background 0.22s, box-shadow 0.18s;
+  cursor: pointer;
+}
+
+.btn-main:hover, .btn-main:focus {
+  background: linear-gradient(90deg, #5433ff 0%, #24c6dc 100%);
+  box-shadow: 0 6px 22px 0 #5433ff30;
+}
+
+.right-landing {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.etapas-box {
+  background: rgba(255,255,255,0.21);
+  border-radius: 22px;
+  box-shadow: 0 4px 32px 0 #0e266844;
+  padding: 40px 34px 34px 34px;
+  min-width: 340px;
+  min-height: 380px;
+  border: 2.5px solid rgba(255,255,255,0.13);
+  backdrop-filter: blur(10px);
+  position: relative;
+  width: 370px;
+  max-width: 99vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.etapa {
+  display: none;
+  width: 100%;
+  min-height: 220px;
+}
+
+.etapa.active {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(18px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.etapa-pergunta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.etapa-pergunta > span {
+  color: #fff;       
+  font-size: 1.32rem;
+  margin-top: 80px;
+ 
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.emoji-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;        
+  margin-bottom: 6px;
+  margin-top: 14px; 
+}
+
+.emoji-btn {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 3rem;     /* tamanho grande */
+  cursor: pointer;
+  box-shadow: none;
+  outline: none;
+  transition: transform 0.15s, box-shadow 0.15s, border 0.13s;
+  border: 3.5px solid transparent;
+  min-width: 64px;    
+  min-height: 64px;
+  margin: 0 0.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+}
+
+.emoji-btn span {
+  font-size: 0.98rem;
+  color: #000000;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.emoji-btn:hover, .emoji-btn:focus {
+  transform: scale(1.08);
+  
+}  
+
+.emoji-btn.selected {
+  border: 2.5px solid #5433ff;
+  background: #f0eaff;
+  box-shadow: 0 10px 34px #5433ff33;
+}
+
+.emoji-btn:hover,
+.emoji-btn:focus {
+  transform: scale(1.13);
+ 
+}
+
+.emoji-btn.selected {
+  border: 3.5px solid #fff;
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 8px 22px #fff7f788;
+}
+
+.form-control {
+  width: 100%;
+  min-height: 65px;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1.7px solid #c7bfff;
+  box-shadow: 0 2px 7px #7139f71b;
+  background: #fff;
+  color: #232b44;
+  resize: vertical;
+  transition: border 0.2s;
+  margin-top: 12px;
+}
+
+.form-control:focus {
+  border: 2px solid #3fa4ff;
+  outline: none;
+}
+
+.btn-gradient {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+  color: #232b44;
+  border: none;
+  font-weight: 700;
+  font-size: 1.12rem;
+  border-radius: 10px;
+  padding: 13px 0;
+  box-shadow: 0 2px 8px 0 #ffcc3344;
+  transition: background 0.18s, box-shadow 0.20s;
+  letter-spacing: 0.2px;
+  margin-top: 12px;
+  cursor:pointer;
+}
+
+.btn-gradient:hover, .btn-gradient:focus {
+  background: linear-gradient(90deg, #ffcc33 0%, #ffb347 100%);
+  color: #232b44;
+  box-shadow: 0 5px 18px 0 #ffcc3320;
+}
+
+.msg {
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Centralização e tamanho da imagem da atendente */
+.ilustra-atendente {
+  width: 280px;           /* ajuste o tamanho conforme preferir */
+  max-width: 92%;
+  display: block;
+  margin: 50px auto 0 auto;  /* centraliza horizontalmente */
+  box-shadow: 0 4px 28px #b199ff44;
+  border-radius: 18px;
+  background: transparent;
+}
+
+
+.ilustra-gato {
+  width: 180px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto 14px auto;
+}
+
+@media (max-width: 850px) {
+  .container-landing {
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px 6vw;
+    min-height: auto;
+  }
+  .left-landing {
+    align-items: center;
+    text-align: center;
+    max-width: none;
+    margin-bottom: 24px;
+  }
+  .right-landing {
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 99vw;
+  }
+  .etapas-box {
+    min-width: 95vw;
+    width: 99vw;
+    max-width: 99vw;
+    padding: 20px 2vw 18px 2vw;
+  }
+}
+
+@media (max-width: 520px) {
+  .container-landing {
+    padding: 7vw 1vw;
+    gap: 8px;
+  }
+  .left-landing {
+    padding: 0;
+    font-size: 0.95rem;
+  }
+  .logo-row {
+    margin-bottom: 8px;
+  }
+  .landing-title {
+    font-size: 1.31rem;
+    margin-bottom: 8px;
+  }
+  .etapas-box {
+    padding: 14px 3vw 8px 3vw;
+  }
+  .etapa-pergunta > span {
+    font-size: 1.04rem;
+  }
+  .emoji-row {
+    gap: 12px;
+  }
+  .emoji-btn {
+    min-width: 55px;
+    font-size: 1.31rem;
+    padding: 8px 5px 2px 5px;
+  }
+  .ilustra-gato {
+    width: 110px;
+    margin-bottom: 9px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-landing {
+    flex-direction: column;
+    gap: 10px;
+    padding: 2vw 2vw;
+    min-height: unset;
+  }
+  .left-landing {
+    align-items: center;
+    text-align: center;
+    max-width: 98vw;
+    width: 100%;
+    padding: 0;
+    font-size: 0.97rem;
+  }
+  .logo-row {
+    margin-bottom: 8px;
+  }
+  .landing-title {
+    font-size: 1.35rem;
+    margin-bottom: 7px;
+    line-height: 1.14;
+    word-break: break-word;
+  }
+  .landing-desc {
+    font-size: 1.01rem;
+    margin-bottom: 18px;
+  }
+  .btn-main {
+    padding: 11px 18px;
+    font-size: 1.01rem;
+    width: 92vw;
+    max-width: 370px;
+    margin-bottom: 12px;
+  }
+  .right-landing {
+    width: 100%;
+    min-width: unset;
+    justify-content: center;
+    align-items: center;
+  }
+  .etapas-box {
+    min-width: unset;
+    width: 100vw;
+    max-width: 98vw;
+    padding: 8vw 1vw 3vw 1vw;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-size: 0.98rem;
+  }
+  .etapa-pergunta {
+    gap: 13px;
+    padding-bottom: 0;
+  }
+  .etapa-pergunta > span {
+    font-size: 1rem;
+    margin-top: 22px;
+    margin-bottom: 13px;
+  }
+  .emoji-row {
+    gap: 4vw;
+    margin-top: 4px;
+    margin-bottom: 3px;
+  }
+  .emoji-btn {
+    font-size: 1.6rem;
+    min-width: 37px;
+    min-height: 37px;
+    padding: 0;
+  }
+  .emoji-btn span {
+    font-size: 0.85rem;
+  }
+  .form-control {
+    font-size: 0.95rem;
+    min-height: 38px;
+    padding: 7px;
+  }
+  .ilustra-atendente {
+    width: 90vw;
+    max-width: 96vw;
+    margin: 14px auto 0 auto;
+  }
+  .ilustra-gato {
+    width: 68vw;
+    margin-bottom: 6px;
+  }
+}

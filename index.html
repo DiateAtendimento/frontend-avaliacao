@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Avaliação de Atendimento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-bg">
+    <div class="container-landing">
+      <!-- Lado esquerdo fixo -->
+      <div class="left-landing">
+        <div class="logo-row">
+          <span class="logo-text">Coordenação de Atendimento Colaborativo - CACO</span>
+        </div>
+        <p class="landing-desc">Departamento dos Regimes Próprios de Previdência Social - DRPPS</p>
+        <h1 class="landing-title">Avalie Nosso Atendimento</h1>
+        <p>
+            Sua opinião é muito importante!
+            Responda à pesquisa e contribua para melhorarmos nosso atendimento!
+        </p>
+        <a href="#" id="btnStart" class="btn-main">Começar Avaliação</a>
+      </div>
+      
+
+      <!-- Lado direito dinâmico -->
+      <div class="right-landing">
+        <div class="etapas-box">
+
+            <!-- Etapa inicial: Imagem da atendente + botão -->
+          <div class="etapa" id="etapaInicio">
+            <div class="etapa-pergunta">
+                <img src="img/ilustra-atendente.svg" alt="Atendente" class="ilustra-atendente">
+            </div>
+          </div>
+
+          <!-- Etapa 1: Pergunta 1 -->
+          <div class="etapa" id="etapa1">
+            <div class="etapa-pergunta">
+              <span>1. O atendimento foi prestado com clareza e cordialidade?</span>
+              <div class="emoji-row">
+                <button class="emoji-btn" data-value="Excelente">😊<span>Excelente</span></button>
+                <button class="emoji-btn" data-value="Bom">🙂<span>Bom</span></button>
+                <button class="emoji-btn" data-value="Regular">😐<span>Regular</span></button>
+                <button class="emoji-btn" data-value="Ruim">🙁<span>Ruim</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 2: Pergunta 2 -->
+          <div class="etapa" id="etapa2">
+            <div class="etapa-pergunta">
+              <span>2. Sua dúvida ou solicitação foi resolvida?</span>
+              <div class="emoji-row">
+                <button class="emoji-btn" data-value="Excelente">😊<span>Excelente</span></button>
+                <button class="emoji-btn" data-value="Bom">🙂<span>Bom</span></button>
+                <button class="emoji-btn" data-value="Regular">😐<span>Regular</span></button>
+                <button class="emoji-btn" data-value="Ruim">🙁<span>Ruim</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 3: Pergunta 3 -->
+          <div class="etapa" id="etapa3">
+            <div class="etapa-pergunta">
+              <span>3. O tempo de resposta atendeu às suas expectativas?</span>
+              <div class="emoji-row">
+                <button class="emoji-btn" data-value="Excelente">😊<span>Excelente</span></button>
+                <button class="emoji-btn" data-value="Bom">🙂<span>Bom</span></button>
+                <button class="emoji-btn" data-value="Regular">😐<span>Regular</span></button>
+                <button class="emoji-btn" data-value="Ruim">🙁<span>Ruim</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 4: Pergunta 4 -->
+          <div class="etapa" id="etapa4">
+            <div class="etapa-pergunta">
+              <span>4. Como você avalia sua experiência geral com o atendimento?</span>
+              <div class="emoji-row">
+                <button class="emoji-btn" data-value="Excelente">😊<span>Excelente</span></button>
+                <button class="emoji-btn" data-value="Bom">🙂<span>Bom</span></button>
+                <button class="emoji-btn" data-value="Regular">😐<span>Regular</span></button>
+                <button class="emoji-btn" data-value="Ruim">🙁<span>Ruim</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 5: Comentário -->
+          <div class="etapa" id="etapa5">
+            <div class="etapa-pergunta">
+              <span>5. Comentário, sugestão ou elogio?</span>
+              <textarea id="comentario" class="form-control" rows="2" placeholder="Digite seu comentário aqui"></textarea>
+              <button id="btnEnviar" class="btn-gradient">Enviar Avaliação</button>
+            </div>
+            <div id="msg" class="msg"></div>
+          </div>
+
+          <!-- Etapa final: Agradecimento -->
+          <div class="etapa" id="etapaFinal">
+            <div class="etapa-pergunta" style="text-align:center">
+              <img src="img/ilustra-gato.svg" alt="Gatinho agradecendo" class="ilustra-gato" style="margin-bottom:12px;">
+              <div class="msg" style="font-size:1.3rem; margin-top:8px;">Obrigado pela sua colaboração!</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
